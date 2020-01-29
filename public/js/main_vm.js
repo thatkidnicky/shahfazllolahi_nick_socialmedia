@@ -1,3 +1,4 @@
+dev.ns.addingSocket
 // imports always go first - if we're importing anything
 import ChatMessage from "./modules/ChatMessage.js";
 
@@ -55,4 +56,9 @@ const vm = new Vue({
 
 socket.addEventListener('connected', setUserId);
 socket.addEventListener('disconnect', showDisconnectMessage);
+ dev.ns.working
 socket.addEventListener('new_message', appendMessage);
+
+// imports always go first - if we're importing anything
+master
+master
