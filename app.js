@@ -23,6 +23,13 @@ io.on('connection', function(socket) { //socket is your connection
     console.log('a user has connected');
     socket.emit('connected', {sID: socket.id, message: "new connection" });
 
+    socket.on('chat_message', function(msg) {
+        console.log(msg); //lets see what payload is from client side
+        
+        //tell connection manager (socket.io) to send this message to everyone connected to our chat app
+        io.emit('new_message', { id: socket.id, message: msg })
+    })
+
     socket.on('disconnect', function() {
         console.log('a user has disconnected');
     })
